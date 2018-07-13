@@ -13,10 +13,15 @@
 		F4E4337320F8FF1900204E0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E4337120F8FF1900204E0A /* Main.storyboard */; };
 		F4E4337520F8FF1A00204E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E4337420F8FF1A00204E0A /* Assets.xcassets */; };
 		F4E4337820F8FF1A00204E0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E4337620F8FF1A00204E0A /* LaunchScreen.storyboard */; };
+		F4E4338620F9022E00204E0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4338520F9022E00204E0A /* AppDelegate.swift */; };
+		F4E4338E20F9022E00204E0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4338D20F9022E00204E0A /* ViewController.swift */; };
+		F4E4339320F9022F00204E0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E4339120F9022F00204E0A /* Main.storyboard */; };
+		F4E4339A20F9030E00204E0A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4336D20F8FF1900204E0A /* GameScene.swift */; };
+		F4E4339B20F9030E00204E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E4337420F8FF1A00204E0A /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F4E4336420F8FF1800204E0A /* Jigsaw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jigsaw.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4E4336420F8FF1800204E0A /* Jigsaw (iOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jigsaw (iOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E4336720F8FF1800204E0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4E4336D20F8FF1900204E0A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		F4E4336F20F8FF1900204E0A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -24,10 +29,23 @@
 		F4E4337420F8FF1A00204E0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4E4337720F8FF1A00204E0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4E4337920F8FF1A00204E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4E4338320F9022E00204E0A /* Jigsaw (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jigsaw (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4E4338520F9022E00204E0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F4E4338D20F9022E00204E0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F4E4339220F9022F00204E0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F4E4339420F9022F00204E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4E4339520F9022F00204E0A /* Jigsaw__macOS_.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jigsaw__macOS_.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F4E4336120F8FF1800204E0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4E4338020F9022E00204E0A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -40,7 +58,9 @@
 		F4E4335B20F8FF1800204E0A = {
 			isa = PBXGroup;
 			children = (
-				F4E4336620F8FF1800204E0A /* Jigsaw */,
+				F4E4339920F902A700204E0A /* Shared */,
+				F4E4336620F8FF1800204E0A /* Jigsaw (iOS) */,
+				F4E4338420F9022E00204E0A /* Jigsaw (macOS) */,
 				F4E4336520F8FF1800204E0A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,31 +68,51 @@
 		F4E4336520F8FF1800204E0A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F4E4336420F8FF1800204E0A /* Jigsaw.app */,
+				F4E4336420F8FF1800204E0A /* Jigsaw (iOS).app */,
+				F4E4338320F9022E00204E0A /* Jigsaw (macOS).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F4E4336620F8FF1800204E0A /* Jigsaw */ = {
+		F4E4336620F8FF1800204E0A /* Jigsaw (iOS) */ = {
 			isa = PBXGroup;
 			children = (
 				F4E4336720F8FF1800204E0A /* AppDelegate.swift */,
-				F4E4336D20F8FF1900204E0A /* GameScene.swift */,
 				F4E4336F20F8FF1900204E0A /* GameViewController.swift */,
 				F4E4337120F8FF1900204E0A /* Main.storyboard */,
-				F4E4337420F8FF1A00204E0A /* Assets.xcassets */,
 				F4E4337620F8FF1A00204E0A /* LaunchScreen.storyboard */,
 				F4E4337920F8FF1A00204E0A /* Info.plist */,
 			);
-			path = Jigsaw;
+			path = "Jigsaw (iOS)";
+			sourceTree = "<group>";
+		};
+		F4E4338420F9022E00204E0A /* Jigsaw (macOS) */ = {
+			isa = PBXGroup;
+			children = (
+				F4E4338520F9022E00204E0A /* AppDelegate.swift */,
+				F4E4338D20F9022E00204E0A /* ViewController.swift */,
+				F4E4339120F9022F00204E0A /* Main.storyboard */,
+				F4E4339420F9022F00204E0A /* Info.plist */,
+				F4E4339520F9022F00204E0A /* Jigsaw__macOS_.entitlements */,
+			);
+			path = "Jigsaw (macOS)";
+			sourceTree = "<group>";
+		};
+		F4E4339920F902A700204E0A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				F4E4336D20F8FF1900204E0A /* GameScene.swift */,
+				F4E4337420F8FF1A00204E0A /* Assets.xcassets */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F4E4336320F8FF1800204E0A /* Jigsaw */ = {
+		F4E4336320F8FF1800204E0A /* Jigsaw (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F4E4337C20F8FF1A00204E0A /* Build configuration list for PBXNativeTarget "Jigsaw" */;
+			buildConfigurationList = F4E4337C20F8FF1A00204E0A /* Build configuration list for PBXNativeTarget "Jigsaw (iOS)" */;
 			buildPhases = (
 				F4E4336020F8FF1800204E0A /* Sources */,
 				F4E4336120F8FF1800204E0A /* Frameworks */,
@@ -82,9 +122,26 @@
 			);
 			dependencies = (
 			);
-			name = Jigsaw;
+			name = "Jigsaw (iOS)";
 			productName = Jigsaw;
-			productReference = F4E4336420F8FF1800204E0A /* Jigsaw.app */;
+			productReference = F4E4336420F8FF1800204E0A /* Jigsaw (iOS).app */;
+			productType = "com.apple.product-type.application";
+		};
+		F4E4338220F9022E00204E0A /* Jigsaw (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4E4339620F9022F00204E0A /* Build configuration list for PBXNativeTarget "Jigsaw (macOS)" */;
+			buildPhases = (
+				F4E4337F20F9022E00204E0A /* Sources */,
+				F4E4338020F9022E00204E0A /* Frameworks */,
+				F4E4338120F9022E00204E0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Jigsaw (macOS)";
+			productName = "Jigsaw (macOS)";
+			productReference = F4E4338320F9022E00204E0A /* Jigsaw (macOS).app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -98,6 +155,9 @@
 				ORGANIZATIONNAME = "Voyage Travel Apps";
 				TargetAttributes = {
 					F4E4336320F8FF1800204E0A = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					F4E4338220F9022E00204E0A = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
@@ -115,7 +175,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F4E4336320F8FF1800204E0A /* Jigsaw */,
+				F4E4336320F8FF1800204E0A /* Jigsaw (iOS) */,
+				F4E4338220F9022E00204E0A /* Jigsaw (macOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +192,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F4E4338120F9022E00204E0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4E4339B20F9030E00204E0A /* Assets.xcassets in Resources */,
+				F4E4339320F9022F00204E0A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -141,6 +211,16 @@
 				F4E4336E20F8FF1900204E0A /* GameScene.swift in Sources */,
 				F4E4337020F8FF1900204E0A /* GameViewController.swift in Sources */,
 				F4E4336820F8FF1800204E0A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4E4337F20F9022E00204E0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4E4339A20F9030E00204E0A /* GameScene.swift in Sources */,
+				F4E4338E20F9022E00204E0A /* ViewController.swift in Sources */,
+				F4E4338620F9022E00204E0A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +241,14 @@
 				F4E4337720F8FF1A00204E0A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F4E4339120F9022F00204E0A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4E4339220F9022F00204E0A /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -316,6 +404,50 @@
 			};
 			name = Release;
 		};
+		F4E4339720F9022F00204E0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Jigsaw (macOS)/Jigsaw__macOS_.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 52T262DA8V;
+				INFOPLIST_FILE = "Jigsaw (macOS)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.voyagetravelapps.Jigsaw--macOS-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		F4E4339820F9022F00204E0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Jigsaw (macOS)/Jigsaw__macOS_.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 52T262DA8V;
+				INFOPLIST_FILE = "Jigsaw (macOS)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.voyagetravelapps.Jigsaw--macOS-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -328,11 +460,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F4E4337C20F8FF1A00204E0A /* Build configuration list for PBXNativeTarget "Jigsaw" */ = {
+		F4E4337C20F8FF1A00204E0A /* Build configuration list for PBXNativeTarget "Jigsaw (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F4E4337D20F8FF1A00204E0A /* Debug */,
 				F4E4337E20F8FF1A00204E0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4E4339620F9022F00204E0A /* Build configuration list for PBXNativeTarget "Jigsaw (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4E4339720F9022F00204E0A /* Debug */,
+				F4E4339820F9022F00204E0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
