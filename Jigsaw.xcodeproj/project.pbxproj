@@ -14,10 +14,17 @@
 		F4E4337520F8FF1A00204E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E4337420F8FF1A00204E0A /* Assets.xcassets */; };
 		F4E4337820F8FF1A00204E0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E4337620F8FF1A00204E0A /* LaunchScreen.storyboard */; };
 		F4E4338620F9022E00204E0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4338520F9022E00204E0A /* AppDelegate.swift */; };
-		F4E4338E20F9022E00204E0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4338D20F9022E00204E0A /* ViewController.swift */; };
+		F4E4338E20F9022E00204E0A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4338D20F9022E00204E0A /* GameViewController.swift */; };
 		F4E4339320F9022F00204E0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E4339120F9022F00204E0A /* Main.storyboard */; };
 		F4E4339A20F9030E00204E0A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4336D20F8FF1900204E0A /* GameScene.swift */; };
 		F4E4339B20F9030E00204E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E4337420F8FF1A00204E0A /* Assets.xcassets */; };
+		F4E4339D20F91C7B00204E0A /* GameViewController+sceneSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4339C20F91C7B00204E0A /* GameViewController+sceneSetup.swift */; };
+		F4E4339E20F91C7D00204E0A /* GameViewController+sceneSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4339C20F91C7B00204E0A /* GameViewController+sceneSetup.swift */; };
+		F4E4339F20F928AE00204E0A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4E4337920F8FF1A00204E0A /* Info.plist */; };
+		F4E433A120F94E2A00204E0A /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E433A020F94E2A00204E0A /* Puzzle.swift */; };
+		F4E433A220F94E2A00204E0A /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E433A020F94E2A00204E0A /* Puzzle.swift */; };
+		F4E433A420F94E4E00204E0A /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E433A320F94E4E00204E0A /* Piece.swift */; };
+		F4E433A520F94E4E00204E0A /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E433A320F94E4E00204E0A /* Piece.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,10 +38,13 @@
 		F4E4337920F8FF1A00204E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4E4338320F9022E00204E0A /* Jigsaw (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jigsaw (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E4338520F9022E00204E0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F4E4338D20F9022E00204E0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F4E4338D20F9022E00204E0A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		F4E4339220F9022F00204E0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4E4339420F9022F00204E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4E4339520F9022F00204E0A /* Jigsaw__macOS_.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jigsaw__macOS_.entitlements; sourceTree = "<group>"; };
+		F4E4339C20F91C7B00204E0A /* GameViewController+sceneSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+sceneSetup.swift"; sourceTree = "<group>"; };
+		F4E433A020F94E2A00204E0A /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
+		F4E433A320F94E4E00204E0A /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				F4E4338520F9022E00204E0A /* AppDelegate.swift */,
-				F4E4338D20F9022E00204E0A /* ViewController.swift */,
+				F4E4338D20F9022E00204E0A /* GameViewController.swift */,
 				F4E4339120F9022F00204E0A /* Main.storyboard */,
 				F4E4339420F9022F00204E0A /* Info.plist */,
 				F4E4339520F9022F00204E0A /* Jigsaw__macOS_.entitlements */,
@@ -103,6 +113,9 @@
 			children = (
 				F4E4336D20F8FF1900204E0A /* GameScene.swift */,
 				F4E4337420F8FF1A00204E0A /* Assets.xcassets */,
+				F4E4339C20F91C7B00204E0A /* GameViewController+sceneSetup.swift */,
+				F4E433A020F94E2A00204E0A /* Puzzle.swift */,
+				F4E433A320F94E4E00204E0A /* Piece.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -186,6 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4E4339F20F928AE00204E0A /* Info.plist in Resources */,
 				F4E4337320F8FF1900204E0A /* Main.storyboard in Resources */,
 				F4E4337520F8FF1A00204E0A /* Assets.xcassets in Resources */,
 				F4E4337820F8FF1A00204E0A /* LaunchScreen.storyboard in Resources */,
@@ -208,7 +222,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4E433A120F94E2A00204E0A /* Puzzle.swift in Sources */,
 				F4E4336E20F8FF1900204E0A /* GameScene.swift in Sources */,
+				F4E433A420F94E4E00204E0A /* Piece.swift in Sources */,
+				F4E4339D20F91C7B00204E0A /* GameViewController+sceneSetup.swift in Sources */,
 				F4E4337020F8FF1900204E0A /* GameViewController.swift in Sources */,
 				F4E4336820F8FF1800204E0A /* AppDelegate.swift in Sources */,
 			);
@@ -218,8 +235,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4E433A220F94E2A00204E0A /* Puzzle.swift in Sources */,
 				F4E4339A20F9030E00204E0A /* GameScene.swift in Sources */,
-				F4E4338E20F9022E00204E0A /* ViewController.swift in Sources */,
+				F4E433A520F94E4E00204E0A /* Piece.swift in Sources */,
+				F4E4339E20F91C7D00204E0A /* GameViewController+sceneSetup.swift in Sources */,
+				F4E4338E20F9022E00204E0A /* GameViewController.swift in Sources */,
 				F4E4338620F9022E00204E0A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,7 +394,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 52T262DA8V;
-				INFOPLIST_FILE = Jigsaw/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Jigsaw (iOS)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -392,7 +412,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 52T262DA8V;
-				INFOPLIST_FILE = Jigsaw/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Jigsaw (iOS)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

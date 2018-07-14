@@ -14,13 +14,17 @@
       "scale" : "3x"
     },
     {
-      "idiom" : "ipad",
-      "filename" : "piece12~iPad.png",
+      "idiom" : "iphone",
+      "filename" : "piece12~iPhone.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
+      "idiom" : "iphone",
       "scale" : "2x"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "3x"
     }
   ],
   "info" : {
