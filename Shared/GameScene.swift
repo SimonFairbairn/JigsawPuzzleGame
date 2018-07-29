@@ -18,11 +18,12 @@ class GameScene: SKScene {
 	
 	private var lastUpdateTime : TimeInterval = 0
 	
-	lazy var componentSystems : [GKComponentSystem] = {
-		let spriteCompSystem = GKComponentSystem(componentClass: SpriteComponent.self)
-		let interactionCompSystem = GKComponentSystem(componentClass: InteractionComponent.self)
-		return [interactionCompSystem, spriteCompSystem]
-	}()
+lazy var componentSystems : [GKComponentSystem] = {
+	let spriteCompSystem = GKComponentSystem(componentClass: SpriteComponent.self)
+	let snappingSystem = GKComponentSystem(componentClass: SnappingComponent.self)
+	let interactionCompSystem = GKComponentSystem(componentClass: InteractionComponent.self)
+	return [interactionCompSystem, snappingSystem, spriteCompSystem]
+}()
 	
 	override func sceneDidLoad() {
 		self.lastUpdateTime = 0
@@ -37,9 +38,11 @@ class GameScene: SKScene {
 			let spriteComponent = SpriteComponent(name: piece.name)
 			let positionComponent = PositionComponent(currentPosition: piece.position, targetPosition: piece.position)
 			let interactionComponent = InteractionComponent()
-			puzzlePiece.addComponent(interactionComponent)
+			let snappingComponent = SnappingComponent()
 			puzzlePiece.addComponent(spriteComponent)
 			puzzlePiece.addComponent(positionComponent)
+			puzzlePiece.addComponent(interactionComponent)
+			puzzlePiece.addComponent(snappingComponent)
 			self.addChild(spriteComponent.sprite)
 			self.entities.append(puzzlePiece)
 		}
@@ -68,18 +71,18 @@ class GameScene: SKScene {
 		self.lastUpdateTime = currentTime
 	}
 	
-func topNode(  at point : CGPoint ) -> SKNode? {
-	var topMostNode : SKNode? = nil
-	let nodes = self.nodes(at: point).filter() { $0.entity != nil }
-	for node in nodes {
-		if topMostNode == nil {
-			topMostNode = node
-			continue
+	func topNode(  at point : CGPoint ) -> SKNode? {
+		var topMostNode : SKNode? = nil
+		let nodes = self.nodes(at: point).filter() { $0.entity != nil }
+		for node in nodes {
+			if topMostNode == nil {
+				topMostNode = node
+				continue
+			}
+			if topMostNode!.zPosition < node.zPosition {
+				topMostNode = node
+			}
 		}
-		if topMostNode!.zPosition < node.zPosition {
-			topMostNode = node
-		}
+		return topMostNode
 	}
-	return topMostNode
-}
 }

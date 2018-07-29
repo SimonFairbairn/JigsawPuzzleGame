@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F426F54B210E48EB00F35A64 /* SnappingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426F54A210E48EB00F35A64 /* SnappingComponent.swift */; };
+		F426F54D210E491C00F35A64 /* SnappingComponent+Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426F54C210E491C00F35A64 /* SnappingComponent+Snap.swift */; };
+		F426F54E210E499800F35A64 /* SnappingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426F54A210E48EB00F35A64 /* SnappingComponent.swift */; };
+		F426F54F210E499800F35A64 /* SnappingComponent+Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426F54C210E491C00F35A64 /* SnappingComponent+Snap.swift */; };
 		F46E455921075DD400260156 /* GameScene+touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46E455821075DD400260156 /* GameScene+touch.swift */; };
 		F46E455B21075DE000260156 /* GameScene+mouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46E455A21075DE000260156 /* GameScene+mouse.swift */; };
 		F46E455D2107752F00260156 /* InteractionComponent+Interact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46E455C2107752F00260156 /* InteractionComponent+Interact.swift */; };
@@ -46,6 +50,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F426F54A210E48EB00F35A64 /* SnappingComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnappingComponent.swift; sourceTree = "<group>"; };
+		F426F54C210E491C00F35A64 /* SnappingComponent+Snap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SnappingComponent+Snap.swift"; sourceTree = "<group>"; };
 		F46E455821075DD400260156 /* GameScene+touch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+touch.swift"; sourceTree = "<group>"; };
 		F46E455A21075DE000260156 /* GameScene+mouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+mouse.swift"; sourceTree = "<group>"; };
 		F46E455C2107752F00260156 /* InteractionComponent+Interact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InteractionComponent+Interact.swift"; sourceTree = "<group>"; };
@@ -153,8 +159,10 @@
 				F4906FC220FF8CAF00C0A04B /* SpriteComponent.swift */,
 				F4906FC520FF904F00C0A04B /* PositionComponent.swift */,
 				F4E3445D2105DA2600C66C53 /* InteractionComponent.swift */,
-				F4906FC820FF94B400C0A04B /* SpriteComponent+Render.swift */,
+				F426F54A210E48EB00F35A64 /* SnappingComponent.swift */,
 				F46E455C2107752F00260156 /* InteractionComponent+Interact.swift */,
+				F426F54C210E491C00F35A64 /* SnappingComponent+Snap.swift */,
+				F4906FC820FF94B400C0A04B /* SpriteComponent+Render.swift */,
 				F46E455E210778CB00260156 /* CGPoint+math.swift */,
 			);
 			path = Shared;
@@ -269,7 +277,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4E433A120F94E2A00204E0A /* Puzzle.swift in Sources */,
+				F426F54B210E48EB00F35A64 /* SnappingComponent.swift in Sources */,
 				F4E4336E20F8FF1900204E0A /* GameScene.swift in Sources */,
+				F426F54D210E491C00F35A64 /* SnappingComponent+Snap.swift in Sources */,
 				F46E4561210778CD00260156 /* InteractionComponent+Interact.swift in Sources */,
 				F4E433A420F94E4E00204E0A /* Piece.swift in Sources */,
 				F4E4337020F8FF1900204E0A /* GameViewController.swift in Sources */,
@@ -288,7 +298,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F46E455B21075DE000260156 /* GameScene+mouse.swift in Sources */,
+				F426F54E210E499800F35A64 /* SnappingComponent.swift in Sources */,
 				F4E433A220F94E2A00204E0A /* Puzzle.swift in Sources */,
+				F426F54F210E499800F35A64 /* SnappingComponent+Snap.swift in Sources */,
 				F46E4560210778CB00260156 /* CGPoint+math.swift in Sources */,
 				F4E4339A20F9030E00204E0A /* GameScene.swift in Sources */,
 				F4E433A520F94E4E00204E0A /* Piece.swift in Sources */,
