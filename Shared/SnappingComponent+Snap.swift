@@ -13,7 +13,7 @@ extension SnappingComponent {
 		guard let positionComponent = entity?.component(ofType: PositionComponent.self) else { return }
 		guard let interactionComponent = entity?.component(ofType: InteractionComponent.self), interactionComponent.state == .none else { return }
 		let vector = positionComponent.currentPosition - positionComponent.targetPosition
-		let hyp = sqrt(( vector.x * vector.x ) + (vector.y + vector.y))
+		let hyp = sqrt(( vector.x * vector.x ) + (vector.y * vector.y))
 		if hyp < self.positionTolerance {
 			positionComponent.currentPosition = positionComponent.targetPosition
 		}

@@ -31,12 +31,21 @@ lazy var componentSystems : [GKComponentSystem] = {
 	
 	override func didMove(to view: SKView) {
 		
+let height = self.size.height
+let width43 = floor((self.size.height / 3 ) * 4)
+let leftMargin = floor(( self.size.width - width43) / 2)
+let yRandomiser = GKRandomDistribution(lowestValue: 0, highestValue: Int(height))
+let xRandomiser = GKRandomDistribution(lowestValue: Int(leftMargin) , highestValue: Int(leftMargin) + Int(width43))
+		
 		self.setupInteractionHandlers()
 		
 		for piece in puzzle.pieces {
 			let puzzlePiece = GKEntity()
 			let spriteComponent = SpriteComponent(name: piece.name)
-			let positionComponent = PositionComponent(currentPosition: piece.position, targetPosition: piece.position)
+			
+let randomX = CGFloat(xRandomiser.nextInt())
+let randomY = CGFloat(yRandomiser.nextInt())
+let positionComponent = PositionComponent(currentPosition: CGPoint(x: randomX, y: randomY), targetPosition: piece.position)
 			let interactionComponent = InteractionComponent()
 			let snappingComponent = SnappingComponent()
 			puzzlePiece.addComponent(spriteComponent)
