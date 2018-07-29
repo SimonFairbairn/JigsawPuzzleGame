@@ -11,21 +11,21 @@ import AppKit
 extension GameScene {
 	func setupInteractionHandlers() {
 	}
-	override func mouseDown(with event: NSEvent) {
+override func mouseDown(with event: NSEvent) {
+	let point = event.location(in: self)
+	guard let hasEntity = self.topNode(at: point)?.entity else {
+		return
 	}
-	override func mouseDragged(with event: NSEvent) {
-		let point = event.location(in: self)
-		self.player.component(ofType: InteractionComponent.self)?.state = Action.move(.changed, point)
-	}
-	override func mouseUp(with event: NSEvent) {
-		let point = event.location(in: self)
-		self.player.component(ofType: InteractionComponent.self)?.state = Action.move(.ended, point)
-	}
-	
-	func movePiece(at point : CGPoint, with state: ActionState ) {
-		let point = event.location(in: self)
-		let entity = self.topNode(at: point)?.entity
-		entity.component(ofType: InteractionComponent.self)?.interactionBegan(.move(.began, point), with: topNode?.entity)
-
-	}
+	self.entityBeingInteractedWith = hasEntity
+	self.entityBeingInteractedWith?.component(ofType: InteractionComponent.self)?.state = .move(.began, point)
+}
+override func mouseDragged(with event: NSEvent) {
+	let point = event.location(in: self)
+	self.entityBeingInteractedWith?.component(ofType: InteractionComponent.self)?.state = .move(.changed, point)
+}
+override func mouseUp(with event: NSEvent) {
+	let point = event.location(in: self)
+	self.entityBeingInteractedWith?.component(ofType: InteractionComponent.self)?.state = .move(.ended, point)
+	self.entityBeingInteractedWith = nil
+}
 }

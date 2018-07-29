@@ -14,6 +14,7 @@ class GameScene: SKScene {
 	var entities = [GKEntity]()
 	var puzzle : Puzzle!
 	
+	var entityBeingInteractedWith : GKEntity?
 	
 	private var lastUpdateTime : TimeInterval = 0
 	

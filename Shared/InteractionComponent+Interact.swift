@@ -18,21 +18,26 @@ extension InteractionComponent {
 		}
 	}
 	
-func handleMove( state : ActionState, point : CGPoint ) {
+func handleMove( state : ActionState, point : CGPoint? ) {
 	guard let positionComponent = entity?.component(ofType: PositionComponent.self) else {
 		return
 	}
 	if self.didBegin {
-		offset = positionComponent.currentPosition - point
+		if let hasPoint = point {
+			offset = positionComponent.currentPosition - hasPoint
+		}
 		self.didBegin = false
 	}
+	
+	if let hasPoint = point {
+		positionComponent.currentPosition = hasPoint + offset
+	}
 	switch state {
-	case .began, .changed:
-		positionComponent.currentPosition = point + offset
 	case .ended:
-		positionComponent.currentPosition = point + offset
 		self.state = .none
 		offset = .zero
+	default:
+		break
 	}
 }
 }

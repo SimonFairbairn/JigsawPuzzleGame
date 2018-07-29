@@ -10,7 +10,7 @@ import GameplayKit
 import SpriteKit
 enum Action  {
 	case none
-	case move(ActionState, CGPoint)
+	case move(ActionState, CGPoint?)
 }
 enum ActionState : Equatable {
 	case began
