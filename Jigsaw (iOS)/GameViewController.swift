@@ -33,8 +33,7 @@ class GameViewController: UIViewController {
 			}
 		}
 		let scene = GameScene(size: sceneSize)
-		
-		
+		scene.puzzle = puzzle
 		scene.scaleMode = .aspectFill
 		
 		// Present the scene

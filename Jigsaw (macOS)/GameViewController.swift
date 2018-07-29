@@ -16,9 +16,15 @@ class GameViewController: NSViewController {
     
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		let puzzle = Puzzle(fileNamed: "pieces.json")
-		print(puzzle?.type)
-		let scene = GameScene(size: CGSize(width: 4038, height: 2048))
+		
+		let puzzle = Puzzle(fileNamed: "pieces-iPad.json")
+		let scene : GameScene
+		if let hasPuzzle = puzzle, hasPuzzle.type == "vector" {
+			scene = GameScene(size: CGSize(width: 2019, height: 1024))
+		} else {
+			scene = GameScene(size: CGSize(width: 4038, height: 2048))
+		}		
+		scene.puzzle = puzzle
 		scene.scaleMode = .aspectFit
 		self.skView.presentScene(scene)
 		self.skView.ignoresSiblingOrder = true

@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F46E455921075DD400260156 /* GameScene+touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46E455821075DD400260156 /* GameScene+touch.swift */; };
+		F46E455B21075DE000260156 /* GameScene+mouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46E455A21075DE000260156 /* GameScene+mouse.swift */; };
+		F46E455D2107752F00260156 /* InteractionComponent+Interact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46E455C2107752F00260156 /* InteractionComponent+Interact.swift */; };
+		F46E455F210778CB00260156 /* CGPoint+math.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46E455E210778CB00260156 /* CGPoint+math.swift */; };
+		F46E4560210778CB00260156 /* CGPoint+math.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46E455E210778CB00260156 /* CGPoint+math.swift */; };
+		F46E4561210778CD00260156 /* InteractionComponent+Interact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46E455C2107752F00260156 /* InteractionComponent+Interact.swift */; };
+		F4906FC320FF8CAF00C0A04B /* SpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4906FC220FF8CAF00C0A04B /* SpriteComponent.swift */; };
+		F4906FC420FF8CAF00C0A04B /* SpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4906FC220FF8CAF00C0A04B /* SpriteComponent.swift */; };
+		F4906FC620FF904F00C0A04B /* PositionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4906FC520FF904F00C0A04B /* PositionComponent.swift */; };
+		F4906FC720FF904F00C0A04B /* PositionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4906FC520FF904F00C0A04B /* PositionComponent.swift */; };
+		F4906FC920FF94B400C0A04B /* SpriteComponent+Render.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4906FC820FF94B400C0A04B /* SpriteComponent+Render.swift */; };
+		F4906FCA20FF94B400C0A04B /* SpriteComponent+Render.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4906FC820FF94B400C0A04B /* SpriteComponent+Render.swift */; };
+		F4D96D7B20FE1A6000E503AE /* pieces.json in Resources */ = {isa = PBXBuildFile; fileRef = F4D96D7A20FE1A6000E503AE /* pieces.json */; };
+		F4E3445E2105DA2600C66C53 /* InteractionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E3445D2105DA2600C66C53 /* InteractionComponent.swift */; };
+		F4E3445F2105DA2600C66C53 /* InteractionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E3445D2105DA2600C66C53 /* InteractionComponent.swift */; };
 		F4E4336820F8FF1800204E0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4336720F8FF1800204E0A /* AppDelegate.swift */; };
 		F4E4336E20F8FF1900204E0A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4336D20F8FF1900204E0A /* GameScene.swift */; };
 		F4E4337020F8FF1900204E0A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4336F20F8FF1900204E0A /* GameViewController.swift */; };
@@ -18,16 +33,28 @@
 		F4E4339320F9022F00204E0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E4339120F9022F00204E0A /* Main.storyboard */; };
 		F4E4339A20F9030E00204E0A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4336D20F8FF1900204E0A /* GameScene.swift */; };
 		F4E4339B20F9030E00204E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E4337420F8FF1A00204E0A /* Assets.xcassets */; };
-		F4E4339D20F91C7B00204E0A /* GameViewController+sceneSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4339C20F91C7B00204E0A /* GameViewController+sceneSetup.swift */; };
-		F4E4339E20F91C7D00204E0A /* GameViewController+sceneSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4339C20F91C7B00204E0A /* GameViewController+sceneSetup.swift */; };
 		F4E4339F20F928AE00204E0A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4E4337920F8FF1A00204E0A /* Info.plist */; };
 		F4E433A120F94E2A00204E0A /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E433A020F94E2A00204E0A /* Puzzle.swift */; };
 		F4E433A220F94E2A00204E0A /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E433A020F94E2A00204E0A /* Puzzle.swift */; };
 		F4E433A420F94E4E00204E0A /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E433A320F94E4E00204E0A /* Piece.swift */; };
 		F4E433A520F94E4E00204E0A /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E433A320F94E4E00204E0A /* Piece.swift */; };
+		F4E433BE20FA5B1F00204E0A /* raster-pieces.json in Resources */ = {isa = PBXBuildFile; fileRef = F4E433B920FA5B1E00204E0A /* raster-pieces.json */; };
+		F4E433C020FA5B1F00204E0A /* pieces-iPad.json in Resources */ = {isa = PBXBuildFile; fileRef = F4E433BA20FA5B1F00204E0A /* pieces-iPad.json */; };
+		F4E433C120FA5B1F00204E0A /* pieces-iPad.json in Resources */ = {isa = PBXBuildFile; fileRef = F4E433BA20FA5B1F00204E0A /* pieces-iPad.json */; };
+		F4E433C220FA5B1F00204E0A /* raster-pieces-iPad.json in Resources */ = {isa = PBXBuildFile; fileRef = F4E433BB20FA5B1F00204E0A /* raster-pieces-iPad.json */; };
+		F4E433C320FA5B1F00204E0A /* raster-pieces-iPad.json in Resources */ = {isa = PBXBuildFile; fileRef = F4E433BB20FA5B1F00204E0A /* raster-pieces-iPad.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F46E455821075DD400260156 /* GameScene+touch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+touch.swift"; sourceTree = "<group>"; };
+		F46E455A21075DE000260156 /* GameScene+mouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+mouse.swift"; sourceTree = "<group>"; };
+		F46E455C2107752F00260156 /* InteractionComponent+Interact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InteractionComponent+Interact.swift"; sourceTree = "<group>"; };
+		F46E455E210778CB00260156 /* CGPoint+math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+math.swift"; sourceTree = "<group>"; };
+		F4906FC220FF8CAF00C0A04B /* SpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
+		F4906FC520FF904F00C0A04B /* PositionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionComponent.swift; sourceTree = "<group>"; };
+		F4906FC820FF94B400C0A04B /* SpriteComponent+Render.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpriteComponent+Render.swift"; sourceTree = "<group>"; };
+		F4D96D7A20FE1A6000E503AE /* pieces.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pieces.json; sourceTree = "<group>"; };
+		F4E3445D2105DA2600C66C53 /* InteractionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionComponent.swift; sourceTree = "<group>"; };
 		F4E4336420F8FF1800204E0A /* Jigsaw (iOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jigsaw (iOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E4336720F8FF1800204E0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4E4336D20F8FF1900204E0A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -42,9 +69,11 @@
 		F4E4339220F9022F00204E0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4E4339420F9022F00204E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4E4339520F9022F00204E0A /* Jigsaw__macOS_.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jigsaw__macOS_.entitlements; sourceTree = "<group>"; };
-		F4E4339C20F91C7B00204E0A /* GameViewController+sceneSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+sceneSetup.swift"; sourceTree = "<group>"; };
 		F4E433A020F94E2A00204E0A /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
 		F4E433A320F94E4E00204E0A /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
+		F4E433B920FA5B1E00204E0A /* raster-pieces.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "raster-pieces.json"; sourceTree = "<group>"; };
+		F4E433BA20FA5B1F00204E0A /* pieces-iPad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "pieces-iPad.json"; sourceTree = "<group>"; };
+		F4E433BB20FA5B1F00204E0A /* raster-pieces-iPad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "raster-pieces-iPad.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +121,7 @@
 				F4E4337120F8FF1900204E0A /* Main.storyboard */,
 				F4E4337620F8FF1A00204E0A /* LaunchScreen.storyboard */,
 				F4E4337920F8FF1A00204E0A /* Info.plist */,
+				F46E455821075DD400260156 /* GameScene+touch.swift */,
 			);
 			path = "Jigsaw (iOS)";
 			sourceTree = "<group>";
@@ -104,6 +134,7 @@
 				F4E4339120F9022F00204E0A /* Main.storyboard */,
 				F4E4339420F9022F00204E0A /* Info.plist */,
 				F4E4339520F9022F00204E0A /* Jigsaw__macOS_.entitlements */,
+				F46E455A21075DE000260156 /* GameScene+mouse.swift */,
 			);
 			path = "Jigsaw (macOS)";
 			sourceTree = "<group>";
@@ -111,11 +142,20 @@
 		F4E4339920F902A700204E0A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				F4E433BB20FA5B1F00204E0A /* raster-pieces-iPad.json */,
+				F4E433B920FA5B1E00204E0A /* raster-pieces.json */,
+				F4E433BA20FA5B1F00204E0A /* pieces-iPad.json */,
+				F4D96D7A20FE1A6000E503AE /* pieces.json */,
 				F4E4336D20F8FF1900204E0A /* GameScene.swift */,
 				F4E4337420F8FF1A00204E0A /* Assets.xcassets */,
-				F4E4339C20F91C7B00204E0A /* GameViewController+sceneSetup.swift */,
 				F4E433A020F94E2A00204E0A /* Puzzle.swift */,
 				F4E433A320F94E4E00204E0A /* Piece.swift */,
+				F4906FC220FF8CAF00C0A04B /* SpriteComponent.swift */,
+				F4906FC520FF904F00C0A04B /* PositionComponent.swift */,
+				F4E3445D2105DA2600C66C53 /* InteractionComponent.swift */,
+				F4906FC820FF94B400C0A04B /* SpriteComponent+Render.swift */,
+				F46E455C2107752F00260156 /* InteractionComponent+Interact.swift */,
+				F46E455E210778CB00260156 /* CGPoint+math.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -199,7 +239,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4E433C020FA5B1F00204E0A /* pieces-iPad.json in Resources */,
+				F4E433C220FA5B1F00204E0A /* raster-pieces-iPad.json in Resources */,
 				F4E4339F20F928AE00204E0A /* Info.plist in Resources */,
+				F4E433BE20FA5B1F00204E0A /* raster-pieces.json in Resources */,
+				F4D96D7B20FE1A6000E503AE /* pieces.json in Resources */,
 				F4E4337320F8FF1900204E0A /* Main.storyboard in Resources */,
 				F4E4337520F8FF1A00204E0A /* Assets.xcassets in Resources */,
 				F4E4337820F8FF1A00204E0A /* LaunchScreen.storyboard in Resources */,
@@ -211,6 +255,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4E4339B20F9030E00204E0A /* Assets.xcassets in Resources */,
+				F4E433C320FA5B1F00204E0A /* raster-pieces-iPad.json in Resources */,
+				F4E433C120FA5B1F00204E0A /* pieces-iPad.json in Resources */,
 				F4E4339320F9022F00204E0A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,9 +270,15 @@
 			files = (
 				F4E433A120F94E2A00204E0A /* Puzzle.swift in Sources */,
 				F4E4336E20F8FF1900204E0A /* GameScene.swift in Sources */,
+				F46E4561210778CD00260156 /* InteractionComponent+Interact.swift in Sources */,
 				F4E433A420F94E4E00204E0A /* Piece.swift in Sources */,
-				F4E4339D20F91C7B00204E0A /* GameViewController+sceneSetup.swift in Sources */,
 				F4E4337020F8FF1900204E0A /* GameViewController.swift in Sources */,
+				F46E455921075DD400260156 /* GameScene+touch.swift in Sources */,
+				F46E455F210778CB00260156 /* CGPoint+math.swift in Sources */,
+				F4906FC920FF94B400C0A04B /* SpriteComponent+Render.swift in Sources */,
+				F4906FC620FF904F00C0A04B /* PositionComponent.swift in Sources */,
+				F4906FC320FF8CAF00C0A04B /* SpriteComponent.swift in Sources */,
+				F4E3445E2105DA2600C66C53 /* InteractionComponent.swift in Sources */,
 				F4E4336820F8FF1800204E0A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,11 +287,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F46E455B21075DE000260156 /* GameScene+mouse.swift in Sources */,
 				F4E433A220F94E2A00204E0A /* Puzzle.swift in Sources */,
+				F46E4560210778CB00260156 /* CGPoint+math.swift in Sources */,
 				F4E4339A20F9030E00204E0A /* GameScene.swift in Sources */,
 				F4E433A520F94E4E00204E0A /* Piece.swift in Sources */,
-				F4E4339E20F91C7D00204E0A /* GameViewController+sceneSetup.swift in Sources */,
 				F4E4338E20F9022E00204E0A /* GameViewController.swift in Sources */,
+				F4906FCA20FF94B400C0A04B /* SpriteComponent+Render.swift in Sources */,
+				F4906FC720FF904F00C0A04B /* PositionComponent.swift in Sources */,
+				F46E455D2107752F00260156 /* InteractionComponent+Interact.swift in Sources */,
+				F4906FC420FF8CAF00C0A04B /* SpriteComponent.swift in Sources */,
+				F4E3445F2105DA2600C66C53 /* InteractionComponent.swift in Sources */,
 				F4E4338620F9022E00204E0A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

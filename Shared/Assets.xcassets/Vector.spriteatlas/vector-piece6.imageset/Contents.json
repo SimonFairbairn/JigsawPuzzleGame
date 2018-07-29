@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "vector-piece6.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "vector-piece6@2x.png",
       "scale" : "2x"
     },
     {
@@ -26,15 +26,6 @@
       "idiom" : "iphone",
       "filename" : "vector-piece6@3x~iPhone.png",
       "scale" : "3x"
-    },
-    {
-      "idiom" : "ipad",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "ipad",
-      "filename" : "vector-piece6@2x~iPad.png",
-      "scale" : "2x"
     }
   ],
   "info" : {
