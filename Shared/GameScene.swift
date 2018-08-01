@@ -18,12 +18,14 @@ class GameScene: SKScene {
 	
 	private var lastUpdateTime : TimeInterval = 0
 	
-lazy var componentSystems : [GKComponentSystem] = {
-	let spriteCompSystem = GKComponentSystem(componentClass: SpriteComponent.self)
-	let snappingSystem = GKComponentSystem(componentClass: SnappingComponent.self)
-	let interactionCompSystem = GKComponentSystem(componentClass: InteractionComponent.self)
-	return [interactionCompSystem, snappingSystem, spriteCompSystem]
-}()
+	lazy var componentSystems : [GKComponentSystem] = {
+		let spriteCompSystem = GKComponentSystem(componentClass: SpriteComponent.self)
+		let snappingSystem = GKComponentSystem(componentClass: SnappingComponent.self)
+		let interactionCompSystem = GKComponentSystem(componentClass: InteractionComponent.self)
+		return [interactionCompSystem, snappingSystem, spriteCompSystem]
+	}()
+	
+	var winLabel = SKLabelNode()
 	
 	override func sceneDidLoad() {
 		self.lastUpdateTime = 0
@@ -31,11 +33,11 @@ lazy var componentSystems : [GKComponentSystem] = {
 	
 	override func didMove(to view: SKView) {
 		
-let height = self.size.height
-let width43 = floor((self.size.height / 3 ) * 4)
-let leftMargin = floor(( self.size.width - width43) / 2)
-let yRandomiser = GKRandomDistribution(lowestValue: 0, highestValue: Int(height))
-let xRandomiser = GKRandomDistribution(lowestValue: Int(leftMargin) , highestValue: Int(leftMargin) + Int(width43))
+		let height = self.size.height
+		let width43 = floor((self.size.height / 3 ) * 4)
+		let leftMargin = floor(( self.size.width - width43) / 2)
+		let yRandomiser = GKRandomDistribution(lowestValue: 0, highestValue: Int(height))
+		let xRandomiser = GKRandomDistribution(lowestValue: Int(leftMargin) , highestValue: Int(leftMargin) + Int(width43))
 		
 		self.setupInteractionHandlers()
 		
@@ -43,14 +45,14 @@ let xRandomiser = GKRandomDistribution(lowestValue: Int(leftMargin) , highestVal
 			let puzzlePiece = GKEntity()
 			let spriteComponent = SpriteComponent(name: piece.name)
 			
-let randomX = CGFloat(xRandomiser.nextInt())
-let randomY = CGFloat(yRandomiser.nextInt())
+			let randomX = CGFloat(xRandomiser.nextInt())
+			let randomY = CGFloat(yRandomiser.nextInt())
 			var randomPos = CGPoint(x: randomX, y: randomY)
 			if idx > 0 {
 				randomPos = piece.position
 			}
 			
-let positionComponent = PositionComponent(currentPosition: randomPos, targetPosition: piece.position)
+			let positionComponent = PositionComponent(currentPosition: randomPos, targetPosition: piece.position)
 			let interactionComponent = InteractionComponent()
 			let snappingComponent = SnappingComponent()
 			puzzlePiece.addComponent(spriteComponent)
@@ -66,6 +68,20 @@ let positionComponent = PositionComponent(currentPosition: randomPos, targetPosi
 				system.addComponent(foundIn: entity)
 			}
 		}
+		
+		setupLabel()
+	}
+	
+	func setupLabel() {
+		self.winLabel.text = "You Win!"
+		self.winLabel.zPosition = 100
+		self.winLabel.fontColor = .white
+		self.winLabel.fontName = "AvenirNextCondensed-Heavy"
+		self.winLabel.fontSize = 100
+		self.winLabel.isHidden = true
+		self.winLabel.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
+		
+		self.addChild(self.winLabel)
 	}
 	
 	override func update(_ currentTime: TimeInterval) {
@@ -99,6 +115,7 @@ let positionComponent = PositionComponent(currentPosition: randomPos, targetPosi
 	}
 	
 	func handleWinCondition() {
+		self.winLabel.isHidden = false
 		entities.forEach() { $0.removeComponent(ofType: InteractionComponent.self) }
 		let wait = SKAction.wait(forDuration: 3)
 		let transition = SKAction.run {
