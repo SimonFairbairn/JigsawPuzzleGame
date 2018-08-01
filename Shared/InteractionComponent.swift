@@ -8,7 +8,7 @@
 
 import GameplayKit
 import SpriteKit
-enum Action  {
+enum Action : Equatable   {
 	case none
 	case move(ActionState, CGPoint?)
 }

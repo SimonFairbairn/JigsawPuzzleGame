@@ -13,19 +13,24 @@ import GameplayKit
 class GameViewController: NSViewController {
 
     @IBOutlet var skView: SKView!
-    
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		
-		let puzzle = Puzzle(fileNamed: "pieces-iPad.json")
+	
+	static func scene(for fileName: String ) -> GameScene {
+		let puzzle = Puzzle(fileNamed: fileName)
 		let scene : GameScene
 		if let hasPuzzle = puzzle, hasPuzzle.type == "vector" {
 			scene = GameScene(size: CGSize(width: 2019, height: 1024))
 		} else {
 			scene = GameScene(size: CGSize(width: 4038, height: 2048))
-		}		
+		}
 		scene.puzzle = puzzle
 		scene.scaleMode = .aspectFit
+		return scene
+	}
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		let scene = GameViewController.scene(for: "pieces-iPad.json")
 		self.skView.presentScene(scene)
 		self.skView.ignoresSiblingOrder = true
 		self.skView.showsFPS = true
