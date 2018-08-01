@@ -44,6 +44,15 @@ extension InteractionComponent {
 	}
 	
 	func handleRotation( state : ActionState, rotation : CGFloat ) {
+		guard let rotationComponent = entity?.component(ofType: RotationComponent.self) else {
+			return
+		}
 		
+		switch state {
+		case .ended:
+			self.state = .none
+		default:
+			rotationComponent.currentRotation += rotation
+		}
 	}
 }

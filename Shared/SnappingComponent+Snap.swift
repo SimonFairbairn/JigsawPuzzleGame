@@ -14,8 +14,22 @@ extension SnappingComponent {
 		guard let interactionComponent = entity?.component(ofType: InteractionComponent.self), interactionComponent.state == .none else { return }
 		let vector = positionComponent.currentPosition - positionComponent.targetPosition
 		let hyp = sqrt(( vector.x * vector.x ) + (vector.y * vector.y))
-		if hyp < self.positionTolerance {
+		var shouldSnap = true
+		if hyp > self.positionTolerance {
+			shouldSnap = false
+		}
+		if let hasRotation = entity?.component(ofType: RotationComponent.self) {
+			let inDegrees = abs(hasRotation.currentRotation.toDegrees())
+			if inDegrees > rotationTolerance && inDegrees < (360 - rotationTolerance)  {
+				shouldSnap = false
+			}
+		}
+		
+		if shouldSnap {
 			positionComponent.currentPosition = positionComponent.targetPosition
+			if let hasRotation = entity?.component(ofType: RotationComponent.self) {
+				hasRotation.currentRotation = 0
+			}
 		}
 	}
 }

@@ -15,6 +15,7 @@ class GameScene: SKScene {
 	var puzzle : Puzzle!
 	
 	var entityBeingInteractedWith : GKEntity?
+	var previousPosition : CGPoint = .zero
 	
 	private var lastUpdateTime : TimeInterval = 0
 	
@@ -49,21 +50,26 @@ class GameScene: SKScene {
 			let randomX = CGFloat(xRandomiser.nextInt())
 			let randomY = CGFloat(yRandomiser.nextInt())
 			var randomPos = CGPoint(x: randomX, y: randomY)
-			if idx > 0 {
+			var randomRotation = CGFloat(rotationRandomiser.nextInt()).toRads()
+			spriteComponent.sprite.zPosition = CGFloat(idx)
+			if idx > 1 {
 				randomPos = piece.position
+				randomRotation = 0
+				spriteComponent.sprite.zPosition = 0
 			}
 			let positionComponent = PositionComponent(currentPosition: randomPos, targetPosition: piece.position)
 			let interactionComponent = InteractionComponent()
 			let snappingComponent = SnappingComponent()
 			
-			let randomRotation = CGFloat(rotationRandomiser.nextInt()).toRads()
 			let rotationComponent = RotationComponent(currentRotation: randomRotation)
 			puzzlePiece.addComponent(rotationComponent)
 			
 			puzzlePiece.addComponent(spriteComponent)
 			puzzlePiece.addComponent(positionComponent)
-			puzzlePiece.addComponent(interactionComponent)
-			puzzlePiece.addComponent(snappingComponent)
+			if idx < 2 {
+				puzzlePiece.addComponent(interactionComponent)
+				puzzlePiece.addComponent(snappingComponent)
+			}
 			self.addChild(spriteComponent.sprite)
 			self.entities.append(puzzlePiece)
 		}

@@ -12,7 +12,7 @@ import SpriteKit
 class SnappingComponent : GKComponent {
 	
 	let positionTolerance : CGFloat = 100
-	let rotationTolerance : CGFloat = 10
+	let rotationTolerance : CGFloat = 20
 	
 }
 

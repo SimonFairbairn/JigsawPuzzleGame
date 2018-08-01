@@ -13,6 +13,7 @@ class RotationComponent : GKComponent {
 	
 	var currentRotation : CGFloat
 	
+	
 	init( currentRotation : CGFloat ) {
 		self.currentRotation = currentRotation
 		super.init()

@@ -36,9 +36,16 @@ extension GameScene {
 		}
 		self.entityBeingInteractedWith = hasEntity
 		self.entityBeingInteractedWith?.component(ofType: InteractionComponent.self)?.state = .rotate(.began, 0)
+		self.previousPosition = point
 	}
 	override func rightMouseDragged(with event: NSEvent) {
-		self.entityBeingInteractedWith?.component(ofType: InteractionComponent.self)?.state = .rotate(.changed, 10)
+		let difference = self.previousPosition - event.location(in: self)
+		self.previousPosition = event.location(in: self)
+		var rotation = difference.x
+		if abs(difference.x) < 2 {
+			rotation = 0
+		}
+		self.entityBeingInteractedWith?.component(ofType: InteractionComponent.self)?.state = .rotate(.changed, rotation.toRads())
 	}
 	override func rightMouseUp(with event: NSEvent) {
 		self.entityBeingInteractedWith?.component(ofType: InteractionComponent.self)?.state = .rotate(.ended, 0)
