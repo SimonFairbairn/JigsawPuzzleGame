@@ -39,13 +39,18 @@ let xRandomiser = GKRandomDistribution(lowestValue: Int(leftMargin) , highestVal
 		
 		self.setupInteractionHandlers()
 		
-		for piece in puzzle.pieces {
+		for (idx, piece) in puzzle.pieces.enumerated() {
 			let puzzlePiece = GKEntity()
 			let spriteComponent = SpriteComponent(name: piece.name)
 			
 let randomX = CGFloat(xRandomiser.nextInt())
 let randomY = CGFloat(yRandomiser.nextInt())
-let positionComponent = PositionComponent(currentPosition: CGPoint(x: randomX, y: randomY), targetPosition: piece.position)
+			var randomPos = CGPoint(x: randomX, y: randomY)
+			if idx > 0 {
+				randomPos = piece.position
+			}
+			
+let positionComponent = PositionComponent(currentPosition: randomPos, targetPosition: piece.position)
 			let interactionComponent = InteractionComponent()
 			let snappingComponent = SnappingComponent()
 			puzzlePiece.addComponent(spriteComponent)
@@ -78,6 +83,33 @@ let positionComponent = PositionComponent(currentPosition: CGPoint(x: randomX, y
 		}
 		
 		self.lastUpdateTime = currentTime
+		
+		var hasWon = true
+		for entity in entities {
+			if let hasPosition = entity.component(ofType: PositionComponent.self) {
+				if hasPosition.currentPosition != hasPosition.targetPosition {
+					hasWon = false
+				}
+			}
+		}
+		
+		if hasWon {
+			handleWinCondition()
+		}
+	}
+	
+	func handleWinCondition() {
+		entities.forEach() { $0.removeComponent(ofType: InteractionComponent.self) }
+		let wait = SKAction.wait(forDuration: 3)
+		let transition = SKAction.run {
+			let scene = GameScene(size: self.size)
+			scene.puzzle = self.puzzle
+			scene.scaleMode = self.scaleMode
+			let transition = SKTransition.crossFade(withDuration: 1)
+			self.view?.presentScene(scene, transition: transition)
+		}
+		let newScene = SKAction.sequence([wait, transition])
+		self.run(newScene)
 	}
 	
 	func topNode(  at point : CGPoint ) -> SKNode? {
