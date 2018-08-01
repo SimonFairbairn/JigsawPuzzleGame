@@ -11,6 +11,7 @@ import SpriteKit
 enum Action : Equatable   {
 	case none
 	case move(ActionState, CGPoint?)
+	case rotate(ActionState, CGFloat)
 }
 enum ActionState : Equatable {
 	case began
