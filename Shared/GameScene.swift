@@ -38,6 +38,7 @@ class GameScene: SKScene {
 		let leftMargin = floor(( self.size.width - width43) / 2)
 		let yRandomiser = GKRandomDistribution(lowestValue: 0, highestValue: Int(height))
 		let xRandomiser = GKRandomDistribution(lowestValue: Int(leftMargin) , highestValue: Int(leftMargin) + Int(width43))
+		let rotationRandomiser = GKRandomDistribution(lowestValue: 0, highestValue: 359)
 		
 		self.setupInteractionHandlers()
 		
@@ -51,10 +52,14 @@ class GameScene: SKScene {
 			if idx > 0 {
 				randomPos = piece.position
 			}
-			
 			let positionComponent = PositionComponent(currentPosition: randomPos, targetPosition: piece.position)
 			let interactionComponent = InteractionComponent()
 			let snappingComponent = SnappingComponent()
+			
+			let randomRotation = CGFloat(rotationRandomiser.nextInt()).toRads()
+			let rotationComponent = RotationComponent(currentRotation: randomRotation)
+			puzzlePiece.addComponent(rotationComponent)
+			
 			puzzlePiece.addComponent(spriteComponent)
 			puzzlePiece.addComponent(positionComponent)
 			puzzlePiece.addComponent(interactionComponent)

@@ -14,5 +14,9 @@ extension SpriteComponent {
 			return
 		}
 		self.sprite.position = hasPositionComponent.currentPosition
+		
+		if let hasRotation = entity?.component(ofType: RotationComponent.self) {
+			self.sprite.zRotation = hasRotation.currentRotation
+		}
 	}
 }
