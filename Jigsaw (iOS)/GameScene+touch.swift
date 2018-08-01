@@ -12,7 +12,31 @@ extension GameScene {
 		let panRecogniser = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
 		panRecogniser.maximumNumberOfTouches = 1
 		self.view?.addGestureRecognizer(panRecogniser)
+		
+		let rotationRecogniser = UIRotationGestureRecognizer(target: self, action: #selector(handleRotation(_:)))
+		self.view?.addGestureRecognizer(rotationRecogniser)
 	}
+	
+	@objc func handleRotation( _ recogniser : UIRotationGestureRecognizer) {
+		let point = self.scene?.convertPoint(fromView: recogniser.location(in: self.view)) ?? .zero
+		if recogniser.state == .began {
+			self.entityBeingInteractedWith = self.topNode(at: point)?.entity
+		}
+		guard let hasEntity = self.entityBeingInteractedWith else { return }
+		
+		let rotation = recogniser.rotation * -1
+		switch recogniser.state {
+		case .began:
+			hasEntity.component(ofType: InteractionComponent.self)?.state = .rotate(.began, 	rotation)
+		case .changed:
+			hasEntity.component(ofType: InteractionComponent.self)?.state = .rotate(.changed, rotation)
+		case .ended, .cancelled, .failed:
+			hasEntity.component(ofType: InteractionComponent.self)?.state = .rotate(.ended, rotation)
+		default:
+			break
+		}
+	}
+	
 @objc func handlePan(_ recogniser : UIPanGestureRecognizer ) {
 	let point = self.scene?.convertPoint(fromView: recogniser.location(in: self.view)) ?? .zero
 	if recogniser.state == .began {

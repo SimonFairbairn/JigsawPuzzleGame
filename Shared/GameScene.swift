@@ -15,7 +15,7 @@ class GameScene: SKScene {
 	var puzzle : Puzzle!
 	
 	var entityBeingInteractedWith : GKEntity?
-	var previousPosition : CGPoint = .zero
+	var startingPosition : CGPoint = .zero
 	
 	private var lastUpdateTime : TimeInterval = 0
 	
@@ -51,7 +51,7 @@ class GameScene: SKScene {
 			let randomY = CGFloat(yRandomiser.nextInt())
 			var randomPos = CGPoint(x: randomX, y: randomY)
 			var randomRotation = CGFloat(rotationRandomiser.nextInt()).toRads()
-			spriteComponent.sprite.zPosition = CGFloat(idx)
+			spriteComponent.sprite.zPosition = CGFloat(idx + 10)
 			if idx > 1 {
 				randomPos = piece.position
 				randomRotation = 0

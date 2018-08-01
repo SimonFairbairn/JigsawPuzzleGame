@@ -27,11 +27,16 @@ class InteractionComponent : GKComponent {
 				if actionState == .began {
 					self.didBegin = true
 				}
+			case .rotate(let actionState, _):
+				if actionState == .began {
+					self.didBegin = true
+				}
 			default:
 				break
 			}
 		}
 	}
 	var offset : CGPoint = .zero
+	var rotationOffset : CGFloat = 0
 }
 

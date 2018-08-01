@@ -48,11 +48,16 @@ extension InteractionComponent {
 			return
 		}
 		
+		if self.didBegin {
+			rotationOffset = rotationComponent.currentRotation - rotation
+			self.didBegin = false
+		}
+		
 		switch state {
 		case .ended:
 			self.state = .none
 		default:
-			rotationComponent.currentRotation += rotation
+			rotationComponent.currentRotation = rotation + rotationOffset
 		}
 	}
 }
