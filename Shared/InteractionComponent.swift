@@ -23,11 +23,7 @@ class InteractionComponent : GKComponent {
 	var state : Action = .none {
 		didSet {
 			switch state {
-			case .move(let actionState, _):
-				if actionState == .began {
-					self.didBegin = true
-				}
-			case .rotate(let actionState, _):
+			case .move(let actionState, _), .rotate(let actionState, _):
 				if actionState == .began {
 					self.didBegin = true
 				}

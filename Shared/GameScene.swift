@@ -130,9 +130,14 @@ class GameScene: SKScene {
 		entities.forEach() { $0.removeComponent(ofType: InteractionComponent.self) }
 		let wait = SKAction.wait(forDuration: 3)
 		let transition = SKAction.run {
-			let scene = GameScene(size: self.size)
-			scene.puzzle = self.puzzle
-			scene.scaleMode = self.scaleMode
+		let scene : GameScene
+			if let hasNewPuzzle = self.puzzle.nextPuzzle {
+				scene = GameScene.scene(named: hasNewPuzzle)
+			} else {
+				scene = GameScene(size: self.size)
+				scene.puzzle = self.puzzle
+				scene.scaleMode = self.scaleMode
+			}
 			let transition = SKTransition.crossFade(withDuration: 1)
 			self.view?.presentScene(scene, transition: transition)
 		}

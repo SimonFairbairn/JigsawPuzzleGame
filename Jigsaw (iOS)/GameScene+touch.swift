@@ -8,6 +8,31 @@
 
 import GameplayKit
 extension GameScene {
+	
+static func scene(named : String ) -> GameScene {
+	let puzzle = Puzzle(fileNamed: named)
+	let sceneSize : CGSize
+	if UIDevice.current.userInterfaceIdiom == .pad {
+		if let hasPuzzle = puzzle, hasPuzzle.type == "vector" {
+			sceneSize = CGSize(width: 2219, height: 1024)
+		} else {
+			sceneSize = CGSize(width: 4438, height: 2048)
+		}
+	} else {
+		if let hasPuzzle = puzzle, hasPuzzle.type == "vector" {
+			sceneSize = CGSize(width: 1109, height: 512)
+		} else {
+			sceneSize = CGSize(width: 2219, height: 1024)
+		}
+	}
+	let scene = GameScene(size: sceneSize)
+	scene.scaleMode = .aspectFill
+	scene.puzzle = puzzle
+	return scene
+}
+	
+	
+	
 	func setupInteractionHandlers() {
 		let panRecogniser = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
 		panRecogniser.maximumNumberOfTouches = 1

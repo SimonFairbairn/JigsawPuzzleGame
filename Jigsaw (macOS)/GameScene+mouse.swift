@@ -9,6 +9,20 @@
 import AppKit
 
 extension GameScene {
+	
+	static func scene(named: String ) -> GameScene {
+		let puzzle = Puzzle(fileNamed: named)
+		let scene : GameScene
+		if let hasPuzzle = puzzle, hasPuzzle.type == "vector" {
+			scene = GameScene(size: CGSize(width: 2019, height: 1024))
+		} else {
+			scene = GameScene(size: CGSize(width: 4438, height: 2048))
+		}
+		scene.puzzle = puzzle
+		scene.scaleMode = .aspectFit
+		return scene
+	}
+	
 	func setupInteractionHandlers() {
 	}
 	override func mouseDown(with event: NSEvent) {
