@@ -27,9 +27,7 @@ extension SnappingComponent {
 		
 		if shouldSnap {
 			positionComponent.currentPosition = positionComponent.targetPosition
-			if let hasRotation = entity?.component(ofType: RotationComponent.self) {
-				hasRotation.currentRotation = 0
-			}
+			entity?.component(ofType: RotationComponent.self)?.currentRotation = 0
 		}
 	}
 }
