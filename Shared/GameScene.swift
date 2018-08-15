@@ -13,6 +13,7 @@ class GameScene: SKScene {
 	
 	var entities = [GKEntity]()
 	var puzzle : Puzzle!
+	var debug = false
 	
 	var entityBeingInteractedWith : GKEntity?
 	var startingPosition : CGPoint = .zero
@@ -52,7 +53,7 @@ class GameScene: SKScene {
 			var randomPos = CGPoint(x: randomX, y: randomY)
 			var randomRotation = CGFloat(rotationRandomiser.nextInt()).toRads()
 			spriteComponent.sprite.zPosition = CGFloat(idx + 10)
-			if idx > 1 {
+			if idx > 1 && debug {
 				randomPos = piece.position
 				randomRotation = 0
 				spriteComponent.sprite.zPosition = 0
@@ -66,7 +67,7 @@ class GameScene: SKScene {
 			
 			puzzlePiece.addComponent(spriteComponent)
 			puzzlePiece.addComponent(positionComponent)
-			if idx < 2 {
+			if idx < 2 || !debug {
 				puzzlePiece.addComponent(interactionComponent)
 				puzzlePiece.addComponent(snappingComponent)
 			}
