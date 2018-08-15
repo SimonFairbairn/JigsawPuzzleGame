@@ -23,6 +23,10 @@
 		F4906FC720FF904F00C0A04B /* PositionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4906FC520FF904F00C0A04B /* PositionComponent.swift */; };
 		F4906FC920FF94B400C0A04B /* SpriteComponent+Render.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4906FC820FF94B400C0A04B /* SpriteComponent+Render.swift */; };
 		F4906FCA20FF94B400C0A04B /* SpriteComponent+Render.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4906FC820FF94B400C0A04B /* SpriteComponent+Render.swift */; };
+		F4ACEB0D2111C4CD004D45EC /* RotationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ACEB0C2111C4CD004D45EC /* RotationComponent.swift */; };
+		F4ACEB0F2111C5A2004D45EC /* CGFloat+rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ACEB0E2111C5A2004D45EC /* CGFloat+rotation.swift */; };
+		F4ACEB102111C68E004D45EC /* RotationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ACEB0C2111C4CD004D45EC /* RotationComponent.swift */; };
+		F4ACEB112111C6A8004D45EC /* CGFloat+rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ACEB0E2111C5A2004D45EC /* CGFloat+rotation.swift */; };
 		F4D96D7B20FE1A6000E503AE /* pieces.json in Resources */ = {isa = PBXBuildFile; fileRef = F4D96D7A20FE1A6000E503AE /* pieces.json */; };
 		F4E3445E2105DA2600C66C53 /* InteractionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E3445D2105DA2600C66C53 /* InteractionComponent.swift */; };
 		F4E3445F2105DA2600C66C53 /* InteractionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E3445D2105DA2600C66C53 /* InteractionComponent.swift */; };
@@ -59,6 +63,8 @@
 		F4906FC220FF8CAF00C0A04B /* SpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
 		F4906FC520FF904F00C0A04B /* PositionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionComponent.swift; sourceTree = "<group>"; };
 		F4906FC820FF94B400C0A04B /* SpriteComponent+Render.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpriteComponent+Render.swift"; sourceTree = "<group>"; };
+		F4ACEB0C2111C4CD004D45EC /* RotationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationComponent.swift; sourceTree = "<group>"; };
+		F4ACEB0E2111C5A2004D45EC /* CGFloat+rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+rotation.swift"; sourceTree = "<group>"; };
 		F4D96D7A20FE1A6000E503AE /* pieces.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pieces.json; sourceTree = "<group>"; };
 		F4E3445D2105DA2600C66C53 /* InteractionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionComponent.swift; sourceTree = "<group>"; };
 		F4E4336420F8FF1800204E0A /* Jigsaw (iOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jigsaw (iOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,12 +164,14 @@
 				F4E433A320F94E4E00204E0A /* Piece.swift */,
 				F4906FC220FF8CAF00C0A04B /* SpriteComponent.swift */,
 				F4906FC520FF904F00C0A04B /* PositionComponent.swift */,
+				F4ACEB0C2111C4CD004D45EC /* RotationComponent.swift */,
 				F4E3445D2105DA2600C66C53 /* InteractionComponent.swift */,
 				F426F54A210E48EB00F35A64 /* SnappingComponent.swift */,
 				F46E455C2107752F00260156 /* InteractionComponent+Interact.swift */,
 				F426F54C210E491C00F35A64 /* SnappingComponent+Snap.swift */,
 				F4906FC820FF94B400C0A04B /* SpriteComponent+Render.swift */,
 				F46E455E210778CB00260156 /* CGPoint+math.swift */,
+				F4ACEB0E2111C5A2004D45EC /* CGFloat+rotation.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -280,6 +288,7 @@
 				F426F54B210E48EB00F35A64 /* SnappingComponent.swift in Sources */,
 				F4E4336E20F8FF1900204E0A /* GameScene.swift in Sources */,
 				F426F54D210E491C00F35A64 /* SnappingComponent+Snap.swift in Sources */,
+				F4ACEB0D2111C4CD004D45EC /* RotationComponent.swift in Sources */,
 				F46E4561210778CD00260156 /* InteractionComponent+Interact.swift in Sources */,
 				F4E433A420F94E4E00204E0A /* Piece.swift in Sources */,
 				F4E4337020F8FF1900204E0A /* GameViewController.swift in Sources */,
@@ -287,6 +296,7 @@
 				F46E455F210778CB00260156 /* CGPoint+math.swift in Sources */,
 				F4906FC920FF94B400C0A04B /* SpriteComponent+Render.swift in Sources */,
 				F4906FC620FF904F00C0A04B /* PositionComponent.swift in Sources */,
+				F4ACEB0F2111C5A2004D45EC /* CGFloat+rotation.swift in Sources */,
 				F4906FC320FF8CAF00C0A04B /* SpriteComponent.swift in Sources */,
 				F4E3445E2105DA2600C66C53 /* InteractionComponent.swift in Sources */,
 				F4E4336820F8FF1800204E0A /* AppDelegate.swift in Sources */,
@@ -301,6 +311,7 @@
 				F426F54E210E499800F35A64 /* SnappingComponent.swift in Sources */,
 				F4E433A220F94E2A00204E0A /* Puzzle.swift in Sources */,
 				F426F54F210E499800F35A64 /* SnappingComponent+Snap.swift in Sources */,
+				F4ACEB102111C68E004D45EC /* RotationComponent.swift in Sources */,
 				F46E4560210778CB00260156 /* CGPoint+math.swift in Sources */,
 				F4E4339A20F9030E00204E0A /* GameScene.swift in Sources */,
 				F4E433A520F94E4E00204E0A /* Piece.swift in Sources */,
@@ -308,6 +319,7 @@
 				F4906FCA20FF94B400C0A04B /* SpriteComponent+Render.swift in Sources */,
 				F4906FC720FF904F00C0A04B /* PositionComponent.swift in Sources */,
 				F46E455D2107752F00260156 /* InteractionComponent+Interact.swift in Sources */,
+				F4ACEB112111C6A8004D45EC /* CGFloat+rotation.swift in Sources */,
 				F4906FC420FF8CAF00C0A04B /* SpriteComponent.swift in Sources */,
 				F4E3445F2105DA2600C66C53 /* InteractionComponent.swift in Sources */,
 				F4E4338620F9022E00204E0A /* AppDelegate.swift in Sources */,

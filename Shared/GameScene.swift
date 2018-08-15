@@ -13,8 +13,10 @@ class GameScene: SKScene {
 	
 	var entities = [GKEntity]()
 	var puzzle : Puzzle!
+	var debug = false
 	
 	var entityBeingInteractedWith : GKEntity?
+	var startingPosition : CGPoint = .zero
 	
 	private var lastUpdateTime : TimeInterval = 0
 	
@@ -38,6 +40,7 @@ class GameScene: SKScene {
 		let leftMargin = floor(( self.size.width - width43) / 2)
 		let yRandomiser = GKRandomDistribution(lowestValue: 0, highestValue: Int(height))
 		let xRandomiser = GKRandomDistribution(lowestValue: Int(leftMargin) , highestValue: Int(leftMargin) + Int(width43))
+		let rotationRandomiser = GKRandomDistribution(lowestValue: 0, highestValue: 359)
 		
 		self.setupInteractionHandlers()
 		
@@ -48,17 +51,26 @@ class GameScene: SKScene {
 			let randomX = CGFloat(xRandomiser.nextInt())
 			let randomY = CGFloat(yRandomiser.nextInt())
 			var randomPos = CGPoint(x: randomX, y: randomY)
-			if idx > 0 {
+			var randomRotation = CGFloat(rotationRandomiser.nextInt()).toRads()
+			spriteComponent.sprite.zPosition = CGFloat(idx + 10)
+			if idx > 1 && debug {
 				randomPos = piece.position
+				randomRotation = 0
+				spriteComponent.sprite.zPosition = 0
 			}
-			
 			let positionComponent = PositionComponent(currentPosition: randomPos, targetPosition: piece.position)
 			let interactionComponent = InteractionComponent()
 			let snappingComponent = SnappingComponent()
+			
+			let rotationComponent = RotationComponent(currentRotation: randomRotation)
+			puzzlePiece.addComponent(rotationComponent)
+			
 			puzzlePiece.addComponent(spriteComponent)
 			puzzlePiece.addComponent(positionComponent)
-			puzzlePiece.addComponent(interactionComponent)
-			puzzlePiece.addComponent(snappingComponent)
+			if idx < 2 || !debug {
+				puzzlePiece.addComponent(interactionComponent)
+				puzzlePiece.addComponent(snappingComponent)
+			}
 			self.addChild(spriteComponent.sprite)
 			self.entities.append(puzzlePiece)
 		}
@@ -119,9 +131,14 @@ class GameScene: SKScene {
 		entities.forEach() { $0.removeComponent(ofType: InteractionComponent.self) }
 		let wait = SKAction.wait(forDuration: 3)
 		let transition = SKAction.run {
-			let scene = GameScene(size: self.size)
-			scene.puzzle = self.puzzle
-			scene.scaleMode = self.scaleMode
+		let scene : GameScene
+			if let hasNewPuzzle = self.puzzle.nextPuzzle {
+				scene = GameScene.scene(named: hasNewPuzzle)
+			} else {
+				scene = GameScene(size: self.size)
+				scene.puzzle = self.puzzle
+				scene.scaleMode = self.scaleMode
+			}
 			let transition = SKTransition.crossFade(withDuration: 1)
 			self.view?.presentScene(scene, transition: transition)
 		}

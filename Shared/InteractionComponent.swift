@@ -11,6 +11,7 @@ import SpriteKit
 enum Action : Equatable   {
 	case none
 	case move(ActionState, CGPoint?)
+	case rotate(ActionState, CGFloat)
 }
 enum ActionState : Equatable {
 	case began
@@ -22,7 +23,7 @@ class InteractionComponent : GKComponent {
 	var state : Action = .none {
 		didSet {
 			switch state {
-			case .move(let actionState, _):
+			case .move(let actionState, _), .rotate(let actionState, _):
 				if actionState == .began {
 					self.didBegin = true
 				}
@@ -32,5 +33,6 @@ class InteractionComponent : GKComponent {
 		}
 	}
 	var offset : CGPoint = .zero
+	var rotationOffset : CGFloat = 0
 }
 

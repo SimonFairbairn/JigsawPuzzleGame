@@ -15,29 +15,49 @@ extension InteractionComponent {
 			break
 		case .move(let state, let point):
 			self.handleMove(state: state, point: point)
+		case .rotate(let state, let rotation):
+			self.handleRotation(state: state, rotation: rotation)
 		}
 	}
 	
-func handleMove( state : ActionState, point : CGPoint? ) {
-	guard let positionComponent = entity?.component(ofType: PositionComponent.self) else {
-		return
-	}
-	if self.didBegin {
+	func handleMove( state : ActionState, point : CGPoint? ) {
+		guard let positionComponent = entity?.component(ofType: PositionComponent.self) else {
+			return
+		}
+		if self.didBegin {
+			if let hasPoint = point {
+				offset = positionComponent.currentPosition - hasPoint
+			}
+			self.didBegin = false
+		}
+		
 		if let hasPoint = point {
-			offset = positionComponent.currentPosition - hasPoint
+			positionComponent.currentPosition = hasPoint + offset
 		}
-		self.didBegin = false
+		switch state {
+		case .ended:
+			self.state = .none
+			offset = .zero
+		default:
+			break
+		}
 	}
 	
-	if let hasPoint = point {
-		positionComponent.currentPosition = hasPoint + offset
+	func handleRotation( state : ActionState, rotation : CGFloat ) {
+		guard let rotationComponent = entity?.component(ofType: RotationComponent.self) else {
+			return
+		}
+		
+		if self.didBegin {
+			rotationOffset = rotationComponent.currentRotation - rotation
+			self.didBegin = false
+		}
+		
+		switch state {
+		case .ended:
+			self.state = .none
+		default:
+			rotationComponent.currentRotation = rotation + rotationOffset
+		}
 	}
-	switch state {
-	case .ended:
-		self.state = .none
-		offset = .zero
-	default:
-		break
-	}
-}
 }
