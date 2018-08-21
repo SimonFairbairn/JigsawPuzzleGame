@@ -51,9 +51,10 @@ class GameScene: SKScene {
 			let randomX = CGFloat(xRandomiser.nextInt())
 			let randomY = CGFloat(yRandomiser.nextInt())
 			var randomPos = CGPoint(x: randomX, y: randomY)
-			var randomRotation = CGFloat(rotationRandomiser.nextInt()).toRads()
+			let nextRotation = rotationRandomiser.nextInt()
+			var randomRotation = CGFloat(nextRotation).toRads()
 			spriteComponent.sprite.zPosition = CGFloat(idx + 10)
-			if idx > 1 && debug {
+			if (idx > 1 && debug) || nextRotation > 180 {
 				randomPos = piece.position
 				randomRotation = 0
 				spriteComponent.sprite.zPosition = 0
@@ -61,15 +62,18 @@ class GameScene: SKScene {
 			let positionComponent = PositionComponent(currentPosition: randomPos, targetPosition: piece.position)
 			let interactionComponent = InteractionComponent()
 			let snappingComponent = SnappingComponent()
-			
 			let rotationComponent = RotationComponent(currentRotation: randomRotation)
+			let scaleComponent = ScaleComponent()
+			puzzlePiece.addComponent(scaleComponent)
 			puzzlePiece.addComponent(rotationComponent)
 			
 			puzzlePiece.addComponent(spriteComponent)
 			puzzlePiece.addComponent(positionComponent)
 			if idx < 2 || !debug {
-				puzzlePiece.addComponent(interactionComponent)
-				puzzlePiece.addComponent(snappingComponent)
+				if nextRotation <= 180 {
+					puzzlePiece.addComponent(interactionComponent)
+					puzzlePiece.addComponent(snappingComponent)
+				}
 			}
 			self.addChild(spriteComponent.sprite)
 			self.entities.append(puzzlePiece)
@@ -159,5 +163,14 @@ class GameScene: SKScene {
 			}
 		}
 		return topMostNode
+	}
+	
+	func fixZPosition( at point : CGPoint ) {
+		guard let hasPiece = self.entityBeingInteractedWith?.component(ofType: SpriteComponent.self), let stationaryPiece = topNode(at: point)?.entity?.component(ofType: SpriteComponent.self) else {
+			return
+		}
+		if hasPiece.sprite.zPosition < stationaryPiece.sprite.zPosition {
+			hasPiece.sprite.zPosition = stationaryPiece.sprite.zPosition
+		}	
 	}
 }

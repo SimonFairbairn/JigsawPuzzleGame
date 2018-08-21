@@ -28,6 +28,7 @@ extension InteractionComponent {
 			if let hasPoint = point {
 				offset = positionComponent.currentPosition - hasPoint
 			}
+			entity?.component(ofType: ScaleComponent.self)?.targetScale = 1.2
 			self.didBegin = false
 		}
 		
@@ -38,6 +39,7 @@ extension InteractionComponent {
 		case .ended:
 			self.state = .none
 			offset = .zero
+			entity?.component(ofType: ScaleComponent.self)?.targetScale = 1
 		default:
 			break
 		}
