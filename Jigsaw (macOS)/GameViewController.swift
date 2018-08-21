@@ -18,7 +18,7 @@ class GameViewController: NSViewController {
 override func viewDidLoad() {
 	super.viewDidLoad()
 	
-	let scene = GameScene.scene(named: "pieces-iPad.json")
+	let scene = GameScene.scene(named: "raster-pieces-iPad.json")
 	self.skView.presentScene(scene)
 	self.skView.ignoresSiblingOrder = true
 	self.skView.showsFPS = true

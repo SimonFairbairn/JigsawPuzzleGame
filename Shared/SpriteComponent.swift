@@ -12,6 +12,7 @@ import SpriteKit
 class SpriteComponent : GKComponent {
 	
 	let sprite : SKSpriteNode
+	var currentZPosition : CGFloat = 0
 	
 	init( name : String  ) {
 		self.sprite = SKSpriteNode(imageNamed: name)
@@ -20,6 +21,7 @@ class SpriteComponent : GKComponent {
 	
 	override func didAddToEntity() {
 		self.sprite.entity = self.entity
+		self.currentZPosition = self.sprite.zPosition
 	}
 	
 	override func willRemoveFromEntity() {
