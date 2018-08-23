@@ -39,6 +39,7 @@ extension GameScene {
 	}
 	override func mouseUp(with event: NSEvent) {
 		let point = event.location(in: self)
+		self.fixZPosition()
 		self.entityBeingInteractedWith?.component(ofType: InteractionComponent.self)?.state = .move(.ended, point)
 		self.entityBeingInteractedWith = nil
 	}

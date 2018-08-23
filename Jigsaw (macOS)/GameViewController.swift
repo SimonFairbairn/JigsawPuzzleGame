@@ -14,15 +14,15 @@ class GameViewController: NSViewController {
 
     @IBOutlet var skView: SKView!
 
-	
-override func viewDidLoad() {
-	super.viewDidLoad()
-	
-	let scene = GameScene.scene(named: "pieces-iPad.json")
-	self.skView.presentScene(scene)
-	self.skView.ignoresSiblingOrder = true
-	self.skView.showsFPS = true
-	self.skView.showsNodeCount = true
-}
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		let scene = GameScene.scene(named: "raster-pieces-iPad.json")
+		self.skView.presentScene(scene)
+		self.skView.ignoresSiblingOrder = true
+		self.skView.showsFPS = true
+		self.skView.showsNodeCount = true
+	}
 }
 

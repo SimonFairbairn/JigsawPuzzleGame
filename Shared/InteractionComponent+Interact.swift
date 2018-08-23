@@ -28,6 +28,8 @@ extension InteractionComponent {
 			if let hasPoint = point {
 				offset = positionComponent.currentPosition - hasPoint
 			}
+			entity?.component(ofType: ScaleComponent.self)?.targetScale = 1.2
+			entity?.component(ofType: SpriteComponent.self)?.sprite.zPosition = 1000
 			self.didBegin = false
 		}
 		
@@ -38,6 +40,10 @@ extension InteractionComponent {
 		case .ended:
 			self.state = .none
 			offset = .zero
+			entity?.component(ofType: ScaleComponent.self)?.targetScale = 1
+			if let hasSpriteComponent = entity?.component(ofType: SpriteComponent.self) {
+				hasSpriteComponent.sprite.zPosition = hasSpriteComponent.currentZPosition
+			}
 		default:
 			break
 		}
