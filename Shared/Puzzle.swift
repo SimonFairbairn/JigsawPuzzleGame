@@ -10,6 +10,7 @@ import SpriteKit
 struct Puzzle : Decodable {
 	let type : String
 	let pieces : [Piece]
+	let nextPuzzle : String?
 	
 	init?(fileNamed resource: String) {
 		guard let gameURL = Bundle.main.url(forResource: resource, withExtension:nil) else {

@@ -15,24 +15,55 @@ extension InteractionComponent {
 			break
 		case .move(let state, let point):
 			self.handleMove(state: state, point: point)
+		case .rotate(let state, let rotation):
+			self.handleRotation(state: state, rotation: rotation)
 		}
 	}
 	
-func handleMove( state : ActionState, point : CGPoint ) {
-	guard let positionComponent = entity?.component(ofType: PositionComponent.self) else {
-		return
+	func handleMove( state : ActionState, point : CGPoint? ) {
+		guard let positionComponent = entity?.component(ofType: PositionComponent.self) else {
+			return
+		}
+		if self.didBegin {
+			if let hasPoint = point {
+				offset = positionComponent.currentPosition - hasPoint
+			}
+			entity?.component(ofType: ScaleComponent.self)?.targetScale = 1.2
+			entity?.component(ofType: SpriteComponent.self)?.sprite.zPosition = 1000
+			self.didBegin = false
+		}
+		
+		if let hasPoint = point {
+			positionComponent.currentPosition = hasPoint + offset
+		}
+		switch state {
+		case .ended:
+			self.state = .none
+			offset = .zero
+			entity?.component(ofType: ScaleComponent.self)?.targetScale = 1
+			if let hasSpriteComponent = entity?.component(ofType: SpriteComponent.self) {
+				hasSpriteComponent.sprite.zPosition = hasSpriteComponent.currentZPosition
+			}
+		default:
+			break
+		}
 	}
-	if self.didBegin {
-		offset = positionComponent.currentPosition - point
-		self.didBegin = false
+	
+	func handleRotation( state : ActionState, rotation : CGFloat ) {
+		guard let rotationComponent = entity?.component(ofType: RotationComponent.self) else {
+			return
+		}
+		
+		if self.didBegin {
+			rotationOffset = rotationComponent.currentRotation - rotation
+			self.didBegin = false
+		}
+		
+		switch state {
+		case .ended:
+			self.state = .none
+		default:
+			rotationComponent.currentRotation = rotation + rotationOffset
+		}
 	}
-	switch state {
-	case .began, .changed:
-		positionComponent.currentPosition = point + offset
-	case .ended:
-		positionComponent.currentPosition = point + offset
-		self.state = .none
-		offset = .zero
-	}
-}
 }
