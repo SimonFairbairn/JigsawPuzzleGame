@@ -65,6 +65,8 @@
 		F4906FC220FF8CAF00C0A04B /* SpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
 		F4906FC520FF904F00C0A04B /* PositionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionComponent.swift; sourceTree = "<group>"; };
 		F4906FC820FF94B400C0A04B /* SpriteComponent+Render.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpriteComponent+Render.swift"; sourceTree = "<group>"; };
+		F4AB870B212F510800E46B7F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F4AB870C212F510800E46B7F /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		F4ACEB0C2111C4CD004D45EC /* RotationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationComponent.swift; sourceTree = "<group>"; };
 		F4ACEB0E2111C5A2004D45EC /* CGFloat+rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+rotation.swift"; sourceTree = "<group>"; };
 		F4D96D7A20FE1A6000E503AE /* pieces.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pieces.json; sourceTree = "<group>"; };
@@ -111,6 +113,8 @@
 		F4E4335B20F8FF1800204E0A = {
 			isa = PBXGroup;
 			children = (
+				F4AB870C212F510800E46B7F /* LICENSE */,
+				F4AB870B212F510800E46B7F /* README.md */,
 				F4E4339920F902A700204E0A /* Shared */,
 				F4E4336620F8FF1800204E0A /* Jigsaw (iOS) */,
 				F4E4338420F9022E00204E0A /* Jigsaw (macOS) */,
@@ -516,9 +520,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Jigsaw (macOS)/Jigsaw__macOS_.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 52T262DA8V;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Jigsaw (macOS)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -527,6 +531,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.voyagetravelapps.Jigsaw-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 4.0;
 			};
@@ -538,9 +543,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Jigsaw (macOS)/Jigsaw__macOS_.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 52T262DA8V;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Jigsaw (macOS)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -549,6 +554,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.voyagetravelapps.Jigsaw-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 4.0;
 			};
