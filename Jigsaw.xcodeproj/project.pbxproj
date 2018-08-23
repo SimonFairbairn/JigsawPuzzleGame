@@ -525,7 +525,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.voyagetravelapps.Jigsaw--macOS-";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.voyagetravelapps.Jigsaw-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 4.0;
@@ -547,7 +547,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.voyagetravelapps.Jigsaw--macOS-";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.voyagetravelapps.Jigsaw-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 4.0;
