@@ -41,10 +41,9 @@ extension InteractionComponent {
 			self.state = .none
 			offset = .zero
 			entity?.component(ofType: ScaleComponent.self)?.targetScale = 1
-if let hasSpriteComponent = entity?.component(ofType: SpriteComponent.self) {
-	hasSpriteComponent.sprite.zPosition = hasSpriteComponent.currentZPosition
-}
-			
+			if let hasSpriteComponent = entity?.component(ofType: SpriteComponent.self) {
+				hasSpriteComponent.sprite.zPosition = hasSpriteComponent.currentZPosition
+			}
 		default:
 			break
 		}

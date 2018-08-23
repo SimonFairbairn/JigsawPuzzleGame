@@ -6,7 +6,7 @@
 //  Copyright © 2018 Voyage Travel Apps. All rights reserved.
 //
 
-import Foundation
+import SpriteKit
 
 extension SpriteComponent {
 	override func update(deltaTime seconds: TimeInterval) {
@@ -23,7 +23,7 @@ if let hasScale = entity?.component(ofType: ScaleComponent.self), hasScale.curre
 	if hasScale.currentTime > 0 {
 		hasScale.currentTime -= seconds
 		let factor = CGFloat((hasScale.duration - hasScale.currentTime) / hasScale.duration)
-		hasScale.currentScale = hasScale.originalScale + (hasScale.difference * CGFloat(factor))
+		hasScale.currentScale = hasScale.originalScale + (hasScale.difference * factor)
 		self.sprite.setScale(hasScale.currentScale)
 	} else {
 		hasScale.currentScale = hasScale.targetScale

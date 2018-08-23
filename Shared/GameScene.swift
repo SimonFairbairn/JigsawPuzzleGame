@@ -93,7 +93,7 @@ class GameScene: SKScene {
 		self.winLabel.zPosition = 100
 		self.winLabel.fontColor = .white
 		self.winLabel.fontName = "AvenirNextCondensed-Heavy"
-		self.winLabel.fontSize = 100
+		self.winLabel.fontSize = ( self.puzzle.type == "vector" ) ? 100 : 200
 		self.winLabel.isHidden = true
 		self.winLabel.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
 		
@@ -165,12 +165,37 @@ class GameScene: SKScene {
 		return topMostNode
 	}
 	
-	func fixZPosition( at point : CGPoint ) {
-		guard let hasPiece = self.entityBeingInteractedWith?.component(ofType: SpriteComponent.self), let stationaryPiece = topNode(at: point)?.entity?.component(ofType: SpriteComponent.self) else {
-			return
+func nodes(within region : CGRect ) -> [SKNode] {
+	var foundNodes = [SKNode]()
+	for node in self.children {
+		if node.entity == nil {
+			continue
 		}
-		if hasPiece.sprite.zPosition < stationaryPiece.sprite.zPosition {
-			hasPiece.sprite.zPosition = stationaryPiece.sprite.zPosition
-		}	
+		if node.frame.intersects( region ) {
+			foundNodes.append(node)
+		}
 	}
+	return foundNodes.sorted(by: { (node1, node2) -> Bool in
+		return node1.zPosition > node2.zPosition
+	})
+}
+	
+func fixZPosition() {
+	guard let hasPiece = self.entityBeingInteractedWith?.component(ofType: SpriteComponent.self) else {
+		return
+	}
+	let nodesWithinFrame = nodes(within: hasPiece.sprite.frame)
+	guard entities.count > 1 else {
+		return
+	}
+	
+	var zPositions = nodesWithinFrame.filter() { $0.zPosition < 1000 }.map() { $0.zPosition }
+	zPositions.append(hasPiece.currentZPosition)
+	let sortedZPositions = zPositions.sorted() { $0 > $1 }
+	
+	for (idx,entity) in nodesWithinFrame.enumerated() {
+		entity.entity?.component(ofType: SpriteComponent.self)?.sprite.zPosition = sortedZPositions[idx]
+		entity.entity?.component(ofType: SpriteComponent.self)?.currentZPosition = sortedZPositions[idx]
+	}
+}
 }

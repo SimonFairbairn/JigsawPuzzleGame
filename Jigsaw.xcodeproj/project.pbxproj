@@ -43,7 +43,6 @@
 		F4E4339320F9022F00204E0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E4339120F9022F00204E0A /* Main.storyboard */; };
 		F4E4339A20F9030E00204E0A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4336D20F8FF1900204E0A /* GameScene.swift */; };
 		F4E4339B20F9030E00204E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E4337420F8FF1A00204E0A /* Assets.xcassets */; };
-		F4E4339F20F928AE00204E0A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4E4337920F8FF1A00204E0A /* Info.plist */; };
 		F4E433A120F94E2A00204E0A /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E433A020F94E2A00204E0A /* Puzzle.swift */; };
 		F4E433A220F94E2A00204E0A /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E433A020F94E2A00204E0A /* Puzzle.swift */; };
 		F4E433A420F94E4E00204E0A /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E433A320F94E4E00204E0A /* Piece.swift */; };
@@ -261,7 +260,6 @@
 			files = (
 				F4E433C020FA5B1F00204E0A /* pieces-iPad.json in Resources */,
 				F4E433C220FA5B1F00204E0A /* raster-pieces-iPad.json in Resources */,
-				F4E4339F20F928AE00204E0A /* Info.plist in Resources */,
 				F4E433BE20FA5B1F00204E0A /* raster-pieces.json in Resources */,
 				F4D96D7B20FE1A6000E503AE /* pieces.json in Resources */,
 				F4E4337320F8FF1900204E0A /* Main.storyboard in Resources */,

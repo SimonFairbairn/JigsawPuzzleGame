@@ -28,6 +28,7 @@ extension SnappingComponent {
 		if shouldSnap {
 			positionComponent.currentPosition = positionComponent.targetPosition
 			entity?.component(ofType: RotationComponent.self)?.currentRotation = 0
+			entity?.component(ofType: SpriteComponent.self)?.sprite.zPosition = 1
 		}
 	}
 }
